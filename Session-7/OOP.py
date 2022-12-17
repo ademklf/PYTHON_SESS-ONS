@@ -87,18 +87,28 @@ os.system('cls' if os.name == 'nt' else 'clear')
 
 class Person:
     company = "clarusway"
+    person_count=0
 
     #automaticaly runs when the instance is created
     def __init__(self,name, age, gender="male"):
         self.name = name
         self.age = age
         self.gender = gender
+        Person.person_count = Person.person_count +1
+    def __str__(self):
+        return f"{self.name} - {self.age}"
 
     def get_details(self):
         print(f"{self.name} - {self.age} - {self.gender}")
 
 person1 = Person("adam", 33)
-person1.get_details()
-
 person2 = Person("Jason", 22)
+
+# person1.get_details()
+# print(Person.person_count)
+
+#! __str__
+
+print(person1)
+print(person2)
 
